@@ -134,7 +134,8 @@ class SensuHandlerTestCase(unittest2.TestCase):
         sensu_handler.ST2_API_BASE_URL = 'https://localhost/api/v1/'
         sensu_handler.ST2_SSL_VERIFY = True
         sensu_handler._create_trigger_type()
-        requests.post.assert_called_with('https://localhost/api/v1/triggertypes',
+        requests.post.assert_called_with(
+            'https://localhost/api/v1/triggertypes',
             data='{"description": "Trigger type for sensu event handler.", ' +
                  '"name": "event_handler", "pack": "sensu"}',
             headers={'Content-Type': 'application/json; charset=utf-8'}, verify=True
