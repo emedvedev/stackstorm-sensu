@@ -4,7 +4,7 @@ machine:
 
 checkout:
   post:
-    - git clone -b master --reverse git@github.com:stackstorm-exchange/ci.git ~/ci
+    - git clone -b master --recursive git@github.com:stackstorm-exchange/ci.git ~/ci
 
 dependencies:
   override:
